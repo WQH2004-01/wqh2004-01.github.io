@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巫琼红 - 数据分析师简历</title>
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --primary-light: #fef3c7;
+            --bg: #fffbeb;
+            --card-bg: #ffffff;
+            --text: #78350f;
+            --text-light: #92400e;
+            --border: #fde68a;
+            --shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.15), 0 2px 4px -2px rgba(245, 158, 11, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -4px rgba(245, 158, 11, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #fbbf24;
+            --primary-dark: #f59e0b;
+            --primary-light: #451a03;
+            --bg: #1c1917;
+            --card-bg: #292524;
+            --text: #fef3c7;
+            --text-light: #fde68a;
+            --border: #451a03;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -4px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 0 2rem;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--primary), var(--primary-dark), var(--primary)) 1;
+        }
+
+        .nav-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .nav-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.4rem 0.6rem;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 1.5rem 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .card:first-of-type {
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--primary-light) 100%);
+            border: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        .header-section {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light), var(--shadow-lg);
+            flex-shrink: 0;
+        }
+
+        .header-info h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-info .objective {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .edu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .school-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .edu-time {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .edu-details {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .edu-courses {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-category h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: transform 0.2s, background 0.2s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: var(--primary-dark);
+        }
+
+        .project-item {
+            margin-bottom: 1.75rem;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+            gap: 0.5rem;
+        }
+
+        .project-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .project-time {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .project-role {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .project-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .experience-time {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .experience-desc {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .awards-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .awards-list li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .awards-list li:last-child {
+            border-bottom: none;
+        }
+
+        .self-evaluation {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: background 0.2s, transform 0.2s, opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .edu-header, .project-header, .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media print {
+            nav, .back-to-top, .theme-toggle {
+                display: none !important;
+            }
+
+            main {
+                padding-top: 0;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #d97706;
+                page-break-inside: avoid;
+            }
+
+            .card:first-of-type {
+                background: #fffbeb;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .skill-tag {
+                background: #fef3c7;
+                color: #78350f;
+                border: 1px solid #fde68a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <span class="nav-name">巫琼红</span>
+            <div class="nav-links">
+                <a href="#education">教育</a>
+                <a href="#skills">技能</a>
+                <a href="#projects">项目</a>
+                <a href="#experience">校园经历</a>
+                <a href="#awards">获奖</a>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <div class="header-section">
+                <img src="https://via.placeholder.com/120" alt="照片" class="avatar">
+                <div class="header-info">
+                    <h1>巫琼红</h1>
+                    <div class="objective">数据分析师（实习/校招）</div>
+                    <div class="contact-info">
+                        <span>📞 13019309109</span>
+                        <span>✉️ 2089838434@qq.com</span>
+                        <span>📍 辽宁省沈阳市</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="education">
+            <h2 class="section-title">教育背景</h2>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span class="school-name">大连大学 计算机科学与技术 本科</span>
+                    <span class="edu-time">2022.09 – 2026.06</span>
+                </div>
+                <div class="edu-details">GPA：3.6/4.0（专业前 15%）| CET-6</div>
+                <div class="edu-courses">主修课程：数据库系统原理、数据挖掘、数据结构、计算机网络、操作系统</div>
+            </div>
+        </div>
+
+        <div class="card" id="skills">
+            <h2 class="section-title">技能</h2>
+            <div class="skill-category">
+                <h4>数据库与SQL</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">复杂SQL查询</span>
+                    <span class="skill-tag">多表联查</span>
+                    <span class="skill-tag">窗口函数</span>
+                    <span class="skill-tag">聚合分析</span>
+                    <span class="skill-tag">MySQL索引优化</span>
+                    <span class="skill-tag">执行计划分析</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>数据分析工具</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Excel数据透视表</span>
+                    <span class="skill-tag">VLOOKUP</span>
+                    <span class="skill-tag">Power BI</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>其他</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">结构化思维</span>
+                    <span class="skill-tag">流程分析</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="projects">
+            <h2 class="section-title">项目经历</h2>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-name">旅游城市资源优化与策略分析模型研究</span>
+                    <span class="project-time">2024.05 – 2025.06</span>
+                </div>
+                <div class="project-role">数据分析负责人</div>
+                <ul class="project-bullets">
+                    <li>使用Python（Pandas）对多源旅游数据进行清洗与预处理，完成数据标准化与缺失值处理</li>
+                    <li>运用TOPSIS与灰色关联分析构建旅游业发展综合评价模型，定量识别博物馆、旅行社为核心驱动因素（权重 28.7%）</li>
+                    <li>通过空间相关性分析（莫兰指数）识别区域旅游发展的"聚集效应"，为资源协同布局提供数据支撑</li>
+                    <li>基于模型结论输出三大优化策略，形成研究报告，为城市资源规划提供决策依据</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-name">"驴友" — 基于人工智能的个性化旅行规划系统</span>
+                    <span class="project-time">2025.09 – 2026.01</span>
+                </div>
+                <div class="project-role">核心开发成员</div>
+                <ul class="project-bullets">
+                    <li>参与系统需求分析与功能设计，聚焦用户画像构建与个性化推荐模块</li>
+                    <li>利用Python实现基于用户历史行为与偏好的协同过滤推荐算法，提升行程推荐精准度</li>
+                    <li>设计并维护后端数据库表结构，使用SQL进行用户数据与行程数据的存储与查询优化</li>
+                    <li>成果：系统可根据用户输入（时间、预算、兴趣）自动生成覆盖景点、住宿、交通的多维旅行方案</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <span class="project-name">校园"最后一公里"即时配送服务</span>
+                    <span class="project-time">2023.09 – 2024.12</span>
+                </div>
+                <div class="project-role">项目负责人</div>
+                <ul class="project-bullets">
+                    <li>洞察校内外人员无法入校的配送痛点，独立设计"平台接单+学生骑手众包"的轻资产运营模式</li>
+                    <li>从0到1拓展 20+ 校外餐饮商户，负责商务洽谈、协议签订与关系维护</li>
+                    <li>外包开发微信小程序作为订单入口，主导订单生成、智能派单、取餐配送全流程设计</li>
+                    <li>招募并管理10人学生配送团队，通过优化派单逻辑将平均配送时长稳定在30分钟内</li>
+                    <li>项目成果：上线后日均订单量突破 80 单，合作商户销售额平均提升 15%，解决 3000+ 师生配送难题</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="experience">
+            <h2 class="section-title">校园经历</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-name">大连大学团务部 | 部员</span>
+                    <span class="experience-time">2022.09 – 2023.09</span>
+                </div>
+                <div class="experience-desc">
+                    熟练执行团员关系转接、团费收缴等标准化流程，确保事务处理合规高效<br>
+                    独立维护并定期更新超 500 人的团员信息数据库，数据准确率 100%，为部门决策提供可靠支持<br>
+                    担任校团委与各班级团支部的沟通枢纽，高效完成通知上传下达与信息汇总上报
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="awards">
+            <h2 class="section-title">获奖经历</h2>
+            <ul class="awards-list">
+                <li>辽宁省数学统计竞赛 省二等奖</li>
+                <li>蓝桥杯 省三等奖（Web应用开发/软件类）</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">自我评价</h2>
+            <p class="self-evaluation">
+                具备扎实的计算机与数据分析基础，善于从数据中发现问题并提出优化方案。在多个项目中展现出较强的逻辑思维、跨部门沟通能力和项目推进能力。责任心强，乐于团队协作，期望在数据分析相关岗位中持续成长，为业务创造可量化的价值。
+            </p>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="返回顶部">↑</button>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleScroll() {
+            const btn = document.querySelector('.back-to-top');
+            if (window.scrollY > 400) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (e.matches && !localStorage.getItem('theme')) {
+                document.body.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-icon').textContent = '☀️';
+            }
+        });
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').textContent = '☀️';
+        } else if (localStorage.getItem('theme') === 'light') {
+            document.body.removeAttribute('data-theme');
+            document.getElementById('theme-icon').textContent = '🌙';
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').textContent = '☀️';
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
